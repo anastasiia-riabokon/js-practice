@@ -131,7 +131,7 @@ function delNegativeNum(array) {
 //   return newArray;
 // }
 
-console.log(delNegativeNum([-2, 5, 8, -1, -4]));
+// console.log(delNegativeNum([-2, 5, 8, -1, -4]));
 // #endregion
 
 // TODO: ======================task-8=====================================
@@ -139,12 +139,76 @@ console.log(delNegativeNum([-2, 5, 8, -1, -4]));
 // довжина рядочку менша за 6 до привести рядок до нижнього регістру, в іншому випадку привести до верхнього регістру.
 
 // #region
+function lowerOrUpper(array = [], paramRegister) {
+  if (!Array.isArray(array)) return false;
 
+  let newArray = '';
+
+  if (array.length < paramRegister) newArray = array.join(' ').toLowerCase();
+  else newArray = array.join(' ').toUpperCase();
+
+  return newArray.split(' ');
+}
+
+// console.log(
+//   lowerOrUpper(['Earth', 'Mars', 'Venus', 'Venus', 'Jupiter', 'Saturn'], 3)
+// );
+// console.log(lowerOrUpper(['Earth', 'Mars', 'Venus'], 5));
 // #endregion
 
 // TODO: ======================task-9=====================================
 // Напиши функцію, яка приймає масив чисел і повертає новий масив, що містить лише непарні числа.
+
+// #region
+function oddArray(array = []) {
+  if (!Array.isArray(array)) return false;
+
+  let newArray = [];
+
+  for (const item of array) {
+    if (item % 2 === 1) newArray.push(item);
+  }
+  return newArray;
+}
+
+// console.log(oddArray([1, 3, 8, 2, 5, 9, 2, 2, 3]));
+// #endregion
+
 // TODO: ======================task-10=====================================
 // Напиши функцію, яка приймає масив чисел і повертає новий масив, де кожне число помножене на індекс, за яким воно знаходиться в масиві.
+
+// #region
+function arrayMultipleOnIndex(array = []) {
+  if (!Array.isArray(array)) return false;
+
+  newArray = [];
+
+  for (let i = 0; i < array.length; i += 1) newArray.push(array[i] * i);
+
+  return newArray;
+}
+
+// console.log(arrayMultipleOnIndex([0, 1, 2, 3, 4]));
+// #endregion
+
 // TODO: ======================task-11=====================================
 // Напиши функцію, яка приймає масив чисел і повертає новий масив, що містить лише числа, які діляться на 3.
+
+// #region
+
+function divOnThree(array) {
+  if (!Array.isArray(array)) return false;
+
+  newArray = [];
+
+  for (const item of array) {
+    if (typeof item !== 'number') return false;
+    if (item % 3 === 0) newArray.push(item);
+  }
+
+  return newArray;
+}
+
+// console.log(divOnThree([1, 3, 8, 9, 6, 3, 12]));
+
+// #endregion
